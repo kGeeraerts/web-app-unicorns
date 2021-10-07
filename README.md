@@ -22,4 +22,4 @@ Deze website zal ook gebruik maken van een achterliggende database en bijhorende
 In de databank zullen de gebruikersgegevens en hondengegevens in bewaard worden
 
 # Optioneel
-Alles laten draaien op de cloud
+Alles laten draaien op de cloud (bv via aws Amplify of AWS EC2)
