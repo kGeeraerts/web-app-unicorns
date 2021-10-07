@@ -13,11 +13,13 @@
 # EERSTE VERSIE
 We maken een website voor het adopteren van honden, dit is in samenwerking met een vzw.
 deze website zal een paar statische pagina's bevatten samen met een dynamische pagina.
-Deze dynamische pagina zal  dienen voor het ?????????????????? 
+Deze dynamische pagina zal  dienen voor het ??????????????????
+Ook is het mogelijk om op de website in te loggen.
 
 We gaan gebruik maken van een web framework, namelijk Laravel.
 
 Deze website zal ook gebruik maken van een achterliggende database en bijhorende API.
+In de databank zullen de gebruikersgegevens en hondengegevens in bewaard worden
 
 # Optioneel
 Alles laten draaien op de cloud
