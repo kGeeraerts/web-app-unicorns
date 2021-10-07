@@ -10,10 +10,14 @@
 *especially if the use of your application is not self-evident*
 
 
-# Huidige Ideeen
-- To Do List
-- Blog
-- Webshop
-- Laravel project van vorig jaar gebruiken en API toevoegen
+# EERSTE VERSIE
+We maken een website voor het adopteren van honden, dit is in samenwerking met een vzw.
+deze website zal een paar statische pagina's bevatten samen met een dynamische pagina.
+Deze dynamische pagina zal  dienen voor het ?????????????????? 
 
-Alles met API en User Management systeem
+We gaan gebruik maken van een web framework, namelijk Laravel.
+
+Deze website zal ook gebruik maken van een achterliggende database en bijhorende API.
+
+# Optioneel
+Alles laten draaien op de cloud
