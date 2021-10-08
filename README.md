@@ -1,5 +1,5 @@
 # Goal
-*describe how this web app will (evantually) earn money or make the world a better place*
+*describe how this web app will (eventually) earn money or make the world a better place*
 
 Het creeeren van een dynamische website voor een vzw die zich bezighoud met het adopteren van honden/puppy's.
 Deze website bevat enkele statische pagina's voor informatie rond de vzw zelf. Maar er zijn ook Dynamishe pagina's beschikbaar, namelijk een voor het bekijken van de honden en hierbij ook om een afspraak te maken om de hond te gaan bezoeken. Maar ook zal er een User Management systeem aan gekoppeld zijn, zodat mensen een account kunnen aanmaken en kunnen inloggen op de website. Enkel de Administrator zal honden kunnen toevoegen of verwijderen, ook zal deze alle afspraken kunnen bekijken.
