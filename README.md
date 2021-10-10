@@ -33,17 +33,18 @@ Indien mogelijk zouden we alles in de cloud laten draaien: bv. web hosting via C
 - Als admin heb ik toegang tot de database van alle honden.
 - Als admin kan ik mij uitloggen.
 
-## Website
-- CSRF
-- SQL Injection
+## Security
+### Website
+- CSRF tokens
+- SQL Injection protection
 
-
-## API
+### API
 - API tokens
-- 
-## Database
+
+### Database
 - Alle data bewaren aan de hand van de GDPR regels
 - Wachtwoorden encrypten
+- Enkel noodzakelijke informatie bijhouden
 
 # Threat model
 *describe your threat model. One or more architectural diagram expected. Also a list of the principal threats and what you will do about them*
