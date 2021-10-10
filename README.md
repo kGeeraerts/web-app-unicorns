@@ -37,9 +37,12 @@ Indien mogelijk zouden we alles in de cloud laten draaien: bv. web hosting via C
 ### Website
 - CSRF tokens
 - SQL Injection protection
+- HTTPS
 
 ### API
 - API tokens
+- Inkomende JSON controleren voor gebruik
+- Stuurt status code terug 
 
 ### Database
 - Alle data bewaren aan de hand van de GDPR regels
