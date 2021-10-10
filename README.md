@@ -22,7 +22,8 @@ Indien mogelijk zouden we alles in de cloud laten draaien: bv. web hosting via C
 - Als admin kan ik nieuwe honden toevoegen.
 - Als admin kan ik honden verwijderen wanneer deze zijn geadopteerd.
 - Als admin heb ik toegang tot alle afspraken.
-
+- Als admin heb ik toegang tot de database van alle leden.
+- Als admin heb ik toegang tot de database van alle honden.
 
 ## Website
 - CSRF
