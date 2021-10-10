@@ -12,7 +12,15 @@ Indien mogelijk zouden we alles in de cloud laten draaien. bv web hosting via Co
 # Acceptance criteria
 *how do we know that the goals have been reached?*
 
-
+## Website
+- CSRF
+- SQL Injection
+## API
+- API tokens
+- 
+## Database
+- Alle data bewaren aan de hand van de GDPR regels
+- Wachtwoorden encrypten
 
 # Threat model
 *describe your threat model. One or more architectural diagram expected. Also a list of the principal threats and what you will do about them*
