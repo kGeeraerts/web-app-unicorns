@@ -13,17 +13,23 @@ Indien mogelijk zouden we alles in de cloud laten draaien: bv. web hosting via C
 *how do we know that the goals have been reached?*
 
 ## User stories
+- Als een bezoeker kan ik informatie lezen over de vzw.
+- Als een bezoeker kan ik kijken welke honden voor adoptie openstaan.
 - Als een bezoeker kan ik mij registreren om lid te worden van de website.
 - Als lid kan ik mij inloggen op mijn account.
 - Als lid kan ik mijn profielpagina wijzigen.
 - Als lid kan ik ik kijken welke honden voor adoptie openstaan.
 - Als lid kan ik een afspraak maken om de hond te gaan bezoeken.
 - Als lid kan ik een hond adopteren.
+- Als lid kan ik mij uitloggen.
+- Als admin kan ik mij inloggen op mijn account.
+- Als admin kan ik mijn profielpagina wijzigen.
 - Als admin kan ik nieuwe honden toevoegen.
 - Als admin kan ik honden verwijderen wanneer deze zijn geadopteerd.
 - Als admin heb ik toegang tot alle afspraken.
 - Als admin heb ik toegang tot de database van alle leden.
 - Als admin heb ik toegang tot de database van alle honden.
+- Als admin kan ik mij uitloggen.
 
 ## Website
 - CSRF
