@@ -1,5 +1,6 @@
 # The DogShop by The Unicorns :unicorn:
 
+
 ## Goal
 
 Het creëren van een dynamische website voor een vzw die zich bezighoud met het adopteren van honden/puppy's.
@@ -60,13 +61,14 @@ Indien mogelijk zouden we alles in de cloud laten draaien: bv. web hosting via C
 
 mogelijke threats en oplossingen
 
-- admin pagina extra beveiligd
+- admin pagina extra beveiligd en met andere poort
 - 2FA
 - gdpr
 - werken met authZ rollen
 - SQL injection
 - Form Validation
 - Max aantal inlog pogingen
+- Geen /admin
 
 ## Deployment
 
