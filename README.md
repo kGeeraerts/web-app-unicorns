@@ -1,5 +1,15 @@
 # The DogShop by The Unicorns :unicorn:
 
+- [Goal](#Goal)
+- [Acceptance criteria](#Acceptance-criteria)
+  - [User stories](#User-stories)
+  - [Security](#Security)
+    - [Website](#Website)
+    - [API](#API)
+    - [Database](#Database)
+- [Threat model](#Threat-model)
+- [Deployment](#Deployment)
+- [Handy dev links](#Handy-dev-links)
 
 ## Goal
 
