@@ -58,7 +58,7 @@ Indien mogelijk zouden we alles in de cloud laten draaien: bv. web hosting via C
 
 *describe your threat model. One or more architectural diagram expected. Also a list of the principal threats and what you will do about them*
 
-mogelijke treaths en oplossingen
+mogelijke threats en oplossingen
 
 - admin pagina extra beveiligd
 - 2FA
