@@ -71,16 +71,27 @@ Indien mogelijk zouden we alles in de cloud laten draaien: bv. web hosting via C
 
 ![Threat Model image](documents/images/ThreatModel-v1.png)
 
-mogelijke threats en oplossingen
+mogelijke threats en oplossingen:
 
-- admin pagina extra beveiligd en met andere poort
-- 2FA
-- gdpr
-- werken met authZ rollen
-- SQL injection
-- Form Validation
-- Max aantal inlog pogingen
-- Geen /admin
+- OWASP:
+  Name |Bedreiging | Oplossing
+  ---| ---| ---
+  Broken Access Control | De toegang verlenen voor onbevoegden op de componenten | Alle componenten afschermen aan de hand van authenticatie & authorisatie
+  Cryptographic Failures | Het niet beveiligen van gevoelige data | Gevoelige data encrypteren en enkel data opslagen die noodzakelijk is
+  Injection | Malafide data dat geïnjecteerd wordt | Valideren van data aan de server-side kant aan de hand van een vertrouwde API
+  Insecure Design | Fouten blootleggen door een slechte architectuur | De applicatie opbouwen in modules
+  Security Misconfiguration | Het misconfigureren van componenten zodat iedereen toegang heeft | Alle niet noodzakelijke poorten sluiten
+  Vulnerable and Outdated Components | Outdated documentatie blijven gebruiken | Documentatie updaten + niet noodzakelijke dingen verwijderen
+  Identification and Authentication Failures | Identicatie en autorisatie niet afschermen | Login & registratie beveiligen aan de hand van bestaande frameworks + controleren op zwakke wachtwoorden
+  Software and Data Integrity Failures | Het gebruiken van malafide software plug-ins | Enkel software plug-ins gebruiken van erkende ontwikkelaars
+  Security Logging and Monitoring Failures | Het niet loggen van activiteiten | Cruciale activiteiten loggen
+
+- Andere security maatregels:
+  - admin pagina extra beveiligd en met andere poort
+  - 2FA
+  - GDPR
+  - werken met authZ rollen
+  - Max aantal inlog pogingen
 
 ## Deployment
 
