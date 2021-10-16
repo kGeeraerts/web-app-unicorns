@@ -68,7 +68,7 @@ Indien mogelijk zouden we alles in de cloud laten draaien: bv. web hosting via C
 
 ## Threat model
 
-![Threat Model image](documents/images/ThreatModel-v1.png)
+![Threat Model image](documents/images/ThreatModel-v2.png)
 
 OWASP:
   Name |Bedreiging | Oplossing
