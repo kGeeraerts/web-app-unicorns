@@ -69,6 +69,8 @@ Indien mogelijk zouden we alles in de cloud laten draaien: bv. web hosting via C
 
 *describe your threat model. One or more architectural diagram expected. Also a list of the principal threats and what you will do about them*
 
+![Threat Model image](documents\images\ThreatModel-v1.png)
+
 mogelijke threats en oplossingen
 
 - admin pagina extra beveiligd en met andere poort
