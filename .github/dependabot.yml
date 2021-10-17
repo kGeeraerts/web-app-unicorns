@@ -6,10 +6,10 @@
 version: 2
 updates:
   - package-ecosystem: "npm"
-    directory: "/"
+    directory: "/DogShop/"
     schedule:
       interval: "monthly"
   - package-ecosystem: "composer"
-    directory: "/"
+    directory: "/DogShop/"
     schedule:
       interval: "monthly"
