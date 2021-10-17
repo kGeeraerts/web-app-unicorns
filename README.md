@@ -78,7 +78,7 @@ OWASP:
   Injection | Malafide data dat geïnjecteerd wordt | Valideren van data aan de server-side kant aan de hand van een vertrouwde API
   Insecure Design | Fouten blootleggen door een slechte architectuur | De applicatie opbouwen in modules
   Security Misconfiguration | Het misconfigureren van componenten zodat iedereen toegang heeft | Alle niet noodzakelijke poorten sluiten
-  Vulnerable and Outdated Components | Outdated documentatie blijven gebruiken | Documentatie updaten + niet noodzakelijke dingen verwijderen
+  Vulnerable and Outdated Components | Outdated documentatie en/of dependencies blijven gebruiken | Documentatie updaten + niet noodzakelijke dingen verwijderen + gebruik maken van GitHub Dependabot
   Identification and Authentication Failures | Identicatie en autorisatie niet afschermen | Login & registratie beveiligen aan de hand van bestaande frameworks + controleren op zwakke wachtwoorden
   Software and Data Integrity Failures | Het gebruiken van malafide software plug-ins | Enkel software plug-ins gebruiken van erkende ontwikkelaars
   Security Logging and Monitoring Failures | Het niet loggen van activiteiten | Cruciale activiteiten loggen
