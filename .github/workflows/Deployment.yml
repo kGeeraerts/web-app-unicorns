@@ -11,5 +11,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Run a one-line script
-        run: cd DogShop && composer install
+     # - name: Run a one-line script
+        #run: cd DogShop && composer install
