@@ -53,6 +53,7 @@ Indien mogelijk zouden we alles in de cloud laten draaien: bv. web hosting via C
 - CSRF tokens
 - SQL Injection protection
 - HTTPS
+- [SSL Labs](https://www.ssllabs.com/ssltest/analyze.html?d=desideriushogeschool.be) rating van A+
 
 #### API
 
