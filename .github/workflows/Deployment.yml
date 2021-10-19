@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: aws-laravel-runner
+    runs-on: self-hosted
 
     steps:
       - uses: actions/checkout@v2
