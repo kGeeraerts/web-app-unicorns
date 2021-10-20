@@ -20,6 +20,7 @@
         "facade/ignition": "^2.15.0",
         "fakerphp/faker": "^v1.16.0",
         "laravel/sail": "^v1.12.0",
+        "laravel/telescope": "^v4.6.5",
         "mockery/mockery": "^v1.4.4",
         "nunomaduro/collision": "^v5.10",
         "phpunit/phpunit": "^v9.5.10"
