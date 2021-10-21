@@ -4,17 +4,22 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDogsTable extends Migration
-{
+class CreateDogsTable extends Migration {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
-    {
+    public function up() {
         Schema::create('dogs', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('name');
+            $table->string('description');
+            $table->float('price');
+            $table->text('image');
+            $table->boolean('available')->default(0);
+            $table->timestamp('available_from')->nullable();
             $table->timestamps();
         });
     }
@@ -24,8 +29,7 @@ class CreateDogsTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down() {
         Schema::dropIfExists('dogs');
     }
 }
