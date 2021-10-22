@@ -70,6 +70,7 @@ Indien mogelijk zouden we alles in de cloud laten draaien: bv. web hosting via C
 - Alle data bewaren aan de hand van de GDPR regels
 - Wachtwoorden encrypten
 - Enkel noodzakelijke informatie bijhouden
+- Data dat aangemaakt is door een user die het recht tot gegevenswissing heeft aangeroepen, manipuleren zodat de aangemaakte data kan blijven bestaan. Dit gebeurt door de hand van het updaten van de tussentabel naar een standaard 'verwijderde user'.
 
 ## Threat model
 
@@ -79,7 +80,7 @@ Indien mogelijk zouden we alles in de cloud laten draaien: bv. web hosting via C
 
 mogelijke threats en oplossingen:
 
-- OWASP:
+OWASP:
   Name |Bedreiging | Oplossing
   ---| ---| ---
   Broken Access Control | De toegang verlenen voor onbevoegden op de componenten | Alle componenten afschermen aan de hand van authenticatie & authorisatie
