@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Dog extends Model {
+class Cart extends Model {
     use HasFactory;
 
     /**
@@ -14,10 +14,7 @@ class Dog extends Model {
      * @var array
      */
     protected $fillable = [
-        'name',
-        'description',
-        'price',
-        'image',
+        'session_id',
     ];
 
     /**
@@ -26,12 +23,20 @@ class Dog extends Model {
      * @var array
      */
     protected $hidden = [
-        'available',
-        'available_from',
         'user_id',
+        'available_from',
     ];
 
-    public function carts() {
-        return $this->morphToMany(Cart::class, 'cartable');
+    public function dogs() {
+        return $this->morphedByMany(Dog::class, 'cartable');
     }
+
+    public function products() {
+        return $this->morphedByMany(Product::class, 'cartable');
+    }
+
+    public function customer() {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
 }
