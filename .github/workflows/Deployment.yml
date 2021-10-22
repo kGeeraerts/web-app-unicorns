@@ -1,0 +1,15 @@
+name: Deployment
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+      - uses: actions/checkout@v2
+
+     # - name: Run a one-line script
+        #run: cd DogShop && composer install

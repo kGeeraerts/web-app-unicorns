@@ -36,20 +36,15 @@ Indien mogelijk zouden we alles in de cloud laten draaien: bv. web hosting via C
 - Als een bezoeker kan ik mij registreren om lid te worden van de website.
 - Als lid kan ik mij inloggen op mijn account.
 - Als lid kan ik mijn profielpagina wijzigen.
-- Als lid kan ik informatie lezen over de vzw.
-- Als lid kan ik ik kijken welke honden voor adoptie openstaan.
 - Als lid kan ik een afspraak maken om de hond te gaan bezoeken.
 - Als lid kan ik een hond adopteren.
 - Als lid kan ik mij uitloggen.
-- Als admin kan ik mij inloggen op mijn account.
-- Als admin kan ik mijn profielpagina wijzigen.
 - Als admin kan ik informatie over de vzw wijzigen.
 - Als admin kan ik nieuwe honden toevoegen.
 - Als admin kan ik honden verwijderen wanneer deze zijn geadopteerd.
 - Als admin heb ik toegang tot alle afspraken.
 - Als admin heb ik toegang tot de database van alle leden.
 - Als admin heb ik toegang tot de database van alle honden.
-- Als admin kan ik mij uitloggen.
 
 ### Security
 
@@ -58,6 +53,7 @@ Indien mogelijk zouden we alles in de cloud laten draaien: bv. web hosting via C
 - CSRF tokens
 - SQL Injection protection
 - HTTPS
+- [SSL Labs](https://www.ssllabs.com/ssltest/analyze.html?d=desideriushogeschool.be) rating van A+
 
 #### API
 
@@ -70,15 +66,10 @@ Indien mogelijk zouden we alles in de cloud laten draaien: bv. web hosting via C
 - Alle data bewaren aan de hand van de GDPR regels
 - Wachtwoorden encrypten
 - Enkel noodzakelijke informatie bijhouden
-- Data dat aangemaakt is door een user die het recht tot gegevenswissing heeft aangeroepen, manipuleren zodat de aangemaakte data kan blijven bestaan. Dit gebeurt door de hand van het updaten van de tussentabel naar een standaard 'verwijderde user'.
 
 ## Threat model
 
-*describe your threat model. One or more architectural diagram expected. Also a list of the principal threats and what you will do about them*
-
-![Threat Model image](documents/images/ThreatModel-v1.png)
-
-mogelijke threats en oplossingen:
+![Threat Model image](documents/images/ThreatModel-v2.png)
 
 OWASP:
   Name |Bedreiging | Oplossing
@@ -88,16 +79,16 @@ OWASP:
   Injection | Malafide data dat geïnjecteerd wordt | Valideren van data aan de server-side kant aan de hand van een vertrouwde API
   Insecure Design | Fouten blootleggen door een slechte architectuur | De applicatie opbouwen in modules
   Security Misconfiguration | Het misconfigureren van componenten zodat iedereen toegang heeft | Alle niet noodzakelijke poorten sluiten
-  Vulnerable and Outdated Components | Outdated documentatie blijven gebruiken | Documentatie updaten + niet noodzakelijke dingen verwijderen
+  Vulnerable and Outdated Components | Outdated documentatie en/of dependencies blijven gebruiken | Documentatie updaten + niet noodzakelijke dingen verwijderen + gebruik maken van GitHub Dependabot
   Identification and Authentication Failures | Identicatie en autorisatie niet afschermen | Login & registratie beveiligen aan de hand van bestaande frameworks + controleren op zwakke wachtwoorden
   Software and Data Integrity Failures | Het gebruiken van malafide software plug-ins | Enkel software plug-ins gebruiken van erkende ontwikkelaars
   Security Logging and Monitoring Failures | Het niet loggen van activiteiten | Cruciale activiteiten loggen
 
-- Andere security maatregels:
-  - admin pagina extra beveiligd en met andere poort
+Andere security maatregels:
+  - Admin pagina extra beveiligd en met andere poort
   - 2FA
   - GDPR
-  - werken met authZ rollen
+  - Werken met authZ rollen
   - Max aantal inlog pogingen
 
 ## Deployment
