@@ -1,12 +1,12 @@
 @component('mail::message')
-# Introduction
+# Account removed
 
-The body of your message.
+Hello {{$user->name}}
 
-@component('mail::button', ['url' => ''])
-Button Text
-@endcomponent
+Your account has been removed from {{ config('app.name') }}.
 
-Thanks,<br>
+We're sad to see you leaving.
+
+Sincerely,<br>
 {{ config('app.name') }}
 @endcomponent

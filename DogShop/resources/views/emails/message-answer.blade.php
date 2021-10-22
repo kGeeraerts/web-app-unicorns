@@ -1,12 +1,18 @@
 @component('mail::message')
-# Introduction
+# Your message has been answered
 
-The body of your message.
+Hello {{$message->name}}
 
-@component('mail::button', ['url' => ''])
-Button Text
+## Your question:
+{{ $message->question }}
+## The answer:
+{{ $message->answer }}
+
+We hope to see you back on
+@component('mail::button', ['url' => route('home')])
+    {{ config('app.name') }}
 @endcomponent
 
-Thanks,<br>
+Kind regards,<br>
 {{ config('app.name') }}
 @endcomponent
