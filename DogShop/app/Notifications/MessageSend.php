@@ -35,11 +35,11 @@ class MessageSend extends Notification implements ShouldQueue {
      * Get the mail representation of the notification.
      *
      * @param mixed $notifiable
-     * @return \Illuminate\Notifications\Messages\MailMessage
+     * @return MailMessage
      */
-    public function toMail($notifiable) {
+    public function toMail($notifiable): MailMessage {
         return (new MailMessage)
-            ->from('no-reply@dogshop.be')
+            ->from('no-reply-dogshop@desideriushogeschool.be')
             ->subject('A new message has been sent to DogShop')
             ->markdown('emails.message-send', [
                 'message'=>$this->message

@@ -31,6 +31,6 @@ class AccountRemoved extends Mailable implements ShouldQueue {
      * @return $this
      */
     public function build(): AccountRemoved {
-        return $this->from('no-reply@dogshop.be')->markdown('emails.account-removed');
+        return $this->from('no-reply-dogshop@desideriushogeschool.be')->markdown('emails.account-removed');
     }
 }

@@ -31,6 +31,6 @@ class AccountTerminated extends Mailable implements ShouldQueue {
      * @return $this
      */
     public function build(): AccountTerminated {
-        return $this->from('no-reply@dogshop.be')->markdown('emails.account-terminated');
+        return $this->from('no-reply-dogshop@desideriushogeschool.be')->markdown('emails.account-terminated');
     }
 }
