@@ -20,6 +20,7 @@
                 <div
                     class="shadow-lg group container rounded-md bg-white  max-w-sm flex justify-center items-center mx-auto bg-gradient-to-r from-yellow-300 to-red-600">
                     <div>
+                        <div class="w-full h-72 rounded-t-md relative bg-no-repeat bg-cover bg-center group-hover:opacity-25" style="background-image: url({{Storage::url($dog->image)}})">
                             <div
                                 class="m-2 float-right group-hover:opacity-25">
                                 @include('button-components.add-to-cart-button', ['route'=>'cart.store','item'=>$dog, 'model'=>'dog'])

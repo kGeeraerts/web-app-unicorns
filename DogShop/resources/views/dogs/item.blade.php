@@ -11,6 +11,7 @@
         </div>
     </x-slot>
     @include('alerts.confirmation-alert')
+    <img src="{{url(Storage::url($dog->image))}}" alt="image" class="w-2/5 float-right ml-4 mb-4">
     <p class="dark:text-white">{{$dog->description}}</p>
     <p class="my-4 dark:text-white">€ {{$dog->price}}</p>
     <div class="mt-4 flex items-center space-x-2">

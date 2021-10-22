@@ -25,7 +25,7 @@ class DogFactory extends Factory {
             'name' => pick_dog(),
             'description' => $this->faker->sentences(3, true),
             'price' => $this->faker->randomFloat(2, 250, 2500),
-            'image' => '/dog-images/ErBaGaneQQZFMki3DghB2xqmKYYAZ8ytMvK2IunF.jpg',
+            'image' => 'dog-images/ErBaGaneQQZFMki3DghB2xqmKYYAZ8ytMvK2IunF.jpg',
             'available' => '1',
             'available_from' => $this->faker->dateTimeBetween('-2 months'),
 
