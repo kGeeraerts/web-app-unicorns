@@ -1,5 +1,11 @@
 <?php
 
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\DogController;
+use App\Http\Controllers\MemberController;
+use App\Http\Controllers\MessageController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +20,64 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
+})->name('home');
+
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+Route::resource('/dogs', DogController::class)->parameters([
+    'dogs' => 'dog'
+]);
+
+Route::resource('/products', ProductController::class)->parameters([
+    'products' => 'product'
+]);
+
+Route::resource('/member', MemberController::class)->parameters([
+    'member' => 'user'
+])->only([
+    'show'
+]);
+
+Route::resource('/contact', MessageController::class)->parameters([
+    'contact' => 'message'
+])->only([
+    'create', 'store'
+]);
+
+Route::resource('cart', CartController::class)->only([
+    'show', 'store', 'destroy',
+]);
+
+Route::Post('cart/{cart}', [CartController::class, 'order'])->name('cart.order');
+
+//Profile routes are being handled by vendor files
+
+Route::middleware(['auth:sanctum', 'verified', 'password.confirm', 'role:vendor|editor|moderator|admin|owner'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/console', function () {
+        return view('admin.console');
+    })->name('console');
+
+    Route::resource('/role', RoleController::class);
+
+    Route::resource('/inbox', MessageController::class)->parameters([
+        'inbox' => 'message'
+    ])->only([
+        'index', 'show', 'edit', 'update',
+    ]);
+
+    Route::get('/members', [MemberController::class, 'index'])->name('members.index');
+
+    Route::resource('/member', MemberController::class)->parameters([
+        'member' => 'user'
+    ])->only([
+        'edit', 'update', 'destroy'
+    ]);
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+
+Route::redirect('/welcome', '/')->name('welcome');
+Route::redirect('/home', '/')->name('home');
+Route::redirect('/dashboard', '/')->name('dashboard');

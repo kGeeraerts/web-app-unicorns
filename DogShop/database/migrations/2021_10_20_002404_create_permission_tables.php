@@ -5,15 +5,13 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use Spatie\Permission\PermissionRegistrar;
 
-class CreatePermissionTables extends Migration
-{
+class CreatePermissionTables extends Migration {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
-    {
+    public function up() {
         $tableNames = config('permission.table_names');
         $columnNames = config('permission.column_names');
         $teams = config('permission.teams');
@@ -124,8 +122,7 @@ class CreatePermissionTables extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down() {
         $tableNames = config('permission.table_names');
 
         if (empty($tableNames)) {
