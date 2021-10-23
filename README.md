@@ -70,7 +70,25 @@ Indien mogelijk zouden we alles in de cloud laten draaien: bv. web hosting via C
 
 ## Threat model
 
-![Threat Model image](documents/images/ThreatModel-v2.png)
+![Threat Model image](documents/images/ThreatModel-v3.png)
+
+### Uitleg diagram
+We vertrekken vanuit de eindgebruik: Onze webapp wordt publiek op het internet beschikbaar gesteld door gebruik te maken van volgende services:
+
+#### Combell 
+Ons product maakt gebruik van de domein hosting service van combell.
+
+#### Cloudflare
+Het product maakt gebruik van de reverse proxy service van Cloudflare.
+Ook handeld dit een deel van de security requirements af namelijk:
+- End to end encryption a.d.h.v. SSL certificaat
+- Minimum TSL 1.2
+- HSTS
+- Altijd HTTPS gebruiken
+- Bescherming tegen DDOS aanvallen
+- Access control list
+- Toegang weigeren voor bots
+
 
 OWASP:
   Name |Bedreiging | Oplossing
@@ -86,7 +104,7 @@ OWASP:
   Security Logging and Monitoring Failures | Het niet loggen van activiteiten | Cruciale activiteiten loggen
 
 Andere security maatregels:
-  - Admin pagina extra beveiligd en met andere poort
+  - Admin pagina extra beveiligd
   - 2FA
   - GDPR
   - Werken met authZ rollen
