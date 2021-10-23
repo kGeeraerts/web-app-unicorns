@@ -1,7 +1,8 @@
 <x-guest-layout>
+    <x-slot name="title"> {{__('Two factor authentication') . ' - ' . config('app.name', 'Laravel')}}</x-slot>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            @include('auth.logo16x16')
         </x-slot>
 
         <div x-data="{ recovery: false }">
