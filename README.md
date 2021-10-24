@@ -14,6 +14,9 @@
     - [API](#API)
     - [Database](#Database)
 - [Threat model](#Threat-model)
+  - [Uitleg diagram](#Uitleg-diagram)
+  - [OWASP Top 10](#OWASP-Top-10)
+  - [Andere security maatregels](#Andere-security-maatregels)
 - [Deployment](#Deployment)
 - [Handy dev links](#Handy-dev-links)
 
@@ -73,25 +76,30 @@ Indien mogelijk zouden we alles in de cloud laten draaien: bv. web hosting via C
 ![Threat Model image](documents/images/ThreatModel-v3.png)
 
 ### Uitleg diagram
+
 We vertrekken vanuit de eindgebruiker: onze webapp wordt publiek op het internet beschikbaar gesteld door gebruik te maken van volgende services:
 
-#### Combell 
-Ons product maakt gebruik van de domein hosting service van Combell.
+- Combell 
 
-#### Cloudflare
-Het product maakt gebruik van de reverse proxy service van Cloudflare.
-Ook handelt dit een deel van de security requirements af, namelijk:
-- End to end encryption a.d.h.v. SSL certificaat
-- Minimum TLS 1.2
-- HSTS
-- Altijd HTTPS gebruiken
-- Bescherming tegen DDOS aanvallen
-- Access control list
-- Toegang weigeren voor bots
+  Ons product maakt gebruik van de domein hosting service van Combell.
+
+- Cloudflare
+
+  Het product maakt gebruik van de reverse proxy service van Cloudflare.
+  Ook handelt dit een deel van de security requirements af, namelijk:
+  
+  - End to end encryption a.d.h.v. SSL certificaat
+  - Minimum TLS 1.2
+  - HSTS
+  - Altijd HTTPS gebruiken
+  - Bescherming tegen DDOS aanvallen
+  - Access control list
+  - Toegang weigeren voor bots
 
 Daarnaast wordt de webapp gehost op een EC2 instantie binnen de AWS trust boundary. Deze webapp zal zijn benodigde data verzamelen door gebruik te maken van een API. Dit proces bevindt zich volledig binnen de AWS trust boundary.
 
-OWASP:
+### OWASP Top 10
+
   Name |Bedreiging | Oplossing |Plaats
   ---| ---| ---| ---
   Broken Access Control | De toegang verlenen voor onbevoegden op de componenten | Alle componenten afschermen aan de hand van authenticatie & authorisatie | De webapp
@@ -104,12 +112,13 @@ OWASP:
   Software and Data Integrity Failures | Het gebruiken van malafide software plug-ins | Het is cruciaal dat de CI/CD pipelines afgescheiden zijn van elkaar en dat zowel de ACL’s als de pipelines zelf correct geconfigureerd zijn. Gebruik maken van de Dependabot die de dependencies up-to-date houdt en ook waarschuwt wanneer er een malafide dependencies gebruikt wordt. Code wordt geschreven op aparte branches. Bij een pull request wordt de code nagekeken door een teamlid en ook door enlightn | De webapp + GitHub + Enlightn
   Security Logging and Monitoring Failures | Het niet loggen van activiteiten | Cruciale activiteiten loggen m.b.v. o.a. Laravel/Telescope | De webapp
 
-Andere security maatregels:
-  - De pagina’s die enkel toegankelijk zijn voor administrators zijn extra beveiligd door de gebruiker nog eens zijn/haar wachtwoord in te voeren.
-  - 2FA
-  - GDPR
-  - Werken met verschillende rollen binnen de webapp (AuthZ)
-  - Maximum aantal inlogpogingen
+### Andere security maatregels
+
+- De pagina’s die enkel toegankelijk zijn voor administrators zijn extra beveiligd door de gebruiker nog eens zijn/haar wachtwoord in te voeren.
+- Werken met verschillende rollen binnen de webapp (AuthZ)
+- Maximum aantal inlogpogingen
+- Toepassen van AVG
+- 2FA 
 
 ## Deployment
 
