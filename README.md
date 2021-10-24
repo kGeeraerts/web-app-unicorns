@@ -73,14 +73,14 @@ Indien mogelijk zouden we alles in de cloud laten draaien: bv. web hosting via C
 ![Threat Model image](documents/images/ThreatModel-v3.png)
 
 ### Uitleg diagram
-We vertrekken vanuit de eindgebruik: Onze webapp wordt publiek op het internet beschikbaar gesteld door gebruik te maken van volgende services:
+We vertrekken vanuit de eindgebruik: onze webapp wordt publiek op het internet beschikbaar gesteld door gebruik te maken van volgende services:
 
 #### Combell 
-Ons product maakt gebruik van de domein hosting service van combell.
+Ons product maakt gebruik van de domein hosting service van Combell.
 
 #### Cloudflare
 Het product maakt gebruik van de reverse proxy service van Cloudflare.
-Ook handeld dit een deel van de security requirements af namelijk:
+Ook handelt dit een deel van de security requirements af namelijk:
 - End to end encryption a.d.h.v. SSL certificaat
 - Minimum TLS 1.2
 - HSTS
@@ -89,7 +89,7 @@ Ook handeld dit een deel van de security requirements af namelijk:
 - Access control list
 - Toegang weigeren voor bots
 
-Daarnaast wordt de webapp gehost op een EC2 instantie binnen de AWS trust boundary. Deze webapp zal zijn benodigde data verzamelen door gebruik te maken van een API. Dit proces bevindt zich volledig binnen de AWS trust boundary afspelen.
+Daarnaast wordt de webapp gehost op een EC2 instantie binnen de AWS trust boundary. Deze webapp zal zijn benodigde data verzamelen door gebruik te maken van een API. Dit proces bevindt zich volledig binnen de AWS trust boundary.
 
 OWASP:
   Name |Bedreiging | Oplossing |Plaats
