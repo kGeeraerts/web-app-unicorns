@@ -82,33 +82,34 @@ Ons product maakt gebruik van de domein hosting service van combell.
 Het product maakt gebruik van de reverse proxy service van Cloudflare.
 Ook handeld dit een deel van de security requirements af namelijk:
 - End to end encryption a.d.h.v. SSL certificaat
-- Minimum TSL 1.2
+- Minimum TLS 1.2
 - HSTS
 - Altijd HTTPS gebruiken
 - Bescherming tegen DDOS aanvallen
 - Access control list
 - Toegang weigeren voor bots
 
+Daarnaast wordt de webapp gehost op een EC2 instantie binnen de AWS trust boundary. Deze webapp zal zijn benodigde data verzamelen door gebruik te maken van een API. Dit proces bevindt zich volledig binnen de AWS trust boundary afspelen.
 
 OWASP:
-  Name |Bedreiging | Oplossing
-  ---| ---| ---
-  Broken Access Control | De toegang verlenen voor onbevoegden op de componenten | Alle componenten afschermen aan de hand van authenticatie & authorisatie
-  Cryptographic Failures | Het niet beveiligen van gevoelige data | Gevoelige data encrypteren en enkel data opslagen die noodzakelijk is
-  Injection | Malafide data dat geïnjecteerd wordt | Valideren van data aan de server-side kant aan de hand van een vertrouwde API
-  Insecure Design | Fouten blootleggen door een slechte architectuur | De applicatie opbouwen in modules
-  Security Misconfiguration | Het misconfigureren van componenten zodat iedereen toegang heeft | Alle niet noodzakelijke poorten sluiten
-  Vulnerable and Outdated Components | Outdated documentatie en/of dependencies blijven gebruiken | Documentatie updaten + niet noodzakelijke dingen verwijderen + gebruik maken van GitHub Dependabot
-  Identification and Authentication Failures | Identicatie en autorisatie niet afschermen | Login & registratie beveiligen aan de hand van bestaande frameworks + controleren op zwakke wachtwoorden
-  Software and Data Integrity Failures | Het gebruiken van malafide software plug-ins | Enkel software plug-ins gebruiken van erkende ontwikkelaars
-  Security Logging and Monitoring Failures | Het niet loggen van activiteiten | Cruciale activiteiten loggen
+  Name |Bedreiging | Oplossing |Plaats
+  ---| ---| ---| ---
+  Broken Access Control | De toegang verlenen voor onbevoegden op de componenten | Alle componenten afschermen aan de hand van authenticatie & authorisatie | De webapp
+  Cryptographic Failures | Het niet beveiligen van gevoelige data | Gevoelige data encrypteren en enkel data opslagen die noodzakelijk is | Dit wordt binnen heel het threat diagram toegepast.
+  Injection | Malafide data dat geïnjecteerd wordt | Valideren van data aan de server-side kant aan de hand van een vertrouwde API | De webapp
+  Insecure Design | Fouten blootleggen door een slechte architectuur | De applicatie opbouwen in modules | De webapp
+  Security Misconfiguration | Het misconfigureren van componenten zodat iedereen toegang heeft | Alle niet noodzakelijke poorten sluiten | De EC2 instantie
+  Vulnerable and Outdated Components | Outdated documentatie en/of dependencies blijven gebruiken | Documentatie updaten + niet noodzakelijke dingen verwijderen + gebruik maken van GitHub Dependabot | De webapp + GitHub
+  Identification and Authentication Failures | Identicatie en autorisatie niet afschermen | Login & registratie beveiligen aan de hand van bestaande frameworks + controleren op zwakke wachtwoorden | De webapp
+  Software and Data Integrity Failures | Het gebruiken van malafide software plug-ins | Het is cruciaal dat de CI/CD pipelines afgescheiden zijn van elkaar en dat zowel de ACL’s als de pipelines zelf correct geconfigureerd zijn. Gebruik maken van de Dependabot die de dependencies up-to-date houdt en ook waarschuwt wanneer er een malafide dependencies gebruikt wordt. Code wordt geschreven op aparte branches. Bij een pull request wordt de code nagekeken door een teamlid en ook door enlightn | De webapp + GitHub + Enlightn
+  Security Logging and Monitoring Failures | Het niet loggen van activiteiten | Cruciale activiteiten loggen m.b.v. o.a. Laravel/Telescope | De webapp
 
 Andere security maatregels:
-  - Admin pagina extra beveiligd
+  - De pagina’s die enkele toegankelijk zijn voor administrators zijn extra beveiligd door de gebruiker nog eens zijn/haar wachtwoord in te doen geven.
   - 2FA
   - GDPR
-  - Werken met authZ rollen
-  - Max aantal inlog pogingen
+  - Werken met verschillende rollen binnen de webapp (AuthZ)
+  - Maximum aantal inlogpogingen
 
 ## Deployment
 
