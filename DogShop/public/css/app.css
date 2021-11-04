@@ -1,4 +1,4 @@
-/*! tailwindcss v2.2.17 | MIT License | https://tailwindcss.com *//*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
+/*! tailwindcss v2.2.19 | MIT License | https://tailwindcss.com *//*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
 /*
 Document
@@ -1167,11 +1167,11 @@ select {
 .m-8 {
 	margin: 2rem;
 }
-.m-0 {
-	margin: 0px;
-}
 .m-auto {
 	margin: auto;
+}
+.m-0 {
+	margin: 0px;
 }
 .mx-auto {
 	margin-left: auto;
@@ -1346,6 +1346,9 @@ select {
 .h-64 {
 	height: 16rem;
 }
+.h-full {
+	height: 100%;
+}
 .h-56 {
 	height: 14rem;
 }
@@ -1354,9 +1357,6 @@ select {
 }
 .h-28 {
 	height: 7rem;
-}
-.h-full {
-	height: 100%;
 }
 .max-h-full {
 	max-height: 100%;
@@ -1445,11 +1445,11 @@ select {
 .max-w-sm {
 	max-width: 24rem;
 }
-.max-w-6xl {
-	max-width: 72rem;
-}
 .max-w-full {
 	max-width: 100%;
+}
+.max-w-6xl {
+	max-width: 72rem;
 }
 .flex-1 {
 	flex: 1 1 0%;
@@ -1816,11 +1816,11 @@ select {
 .p-10 {
 	padding: 2.5rem;
 }
-.p-1 {
-	padding: 0.25rem;
-}
 .p-20 {
 	padding: 5rem;
+}
+.p-1 {
+	padding: 0.25rem;
 }
 .px-4 {
 	padding-left: 1rem;
