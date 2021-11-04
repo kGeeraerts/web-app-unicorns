@@ -10,7 +10,6 @@ updates:
     schedule:
       interval: "monthly"
     commit-message:
-      prefix: "commit-message:
       prefix: "⬆️"
   - package-ecosystem: "composer"
     directory: "/DogShop/"
