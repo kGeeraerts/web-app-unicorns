@@ -9,7 +9,12 @@ updates:
     directory: "/DogShop/"
     schedule:
       interval: "monthly"
+    commit-message:
+      prefix: "commit-message:
+      prefix: "⬆️"
   - package-ecosystem: "composer"
     directory: "/DogShop/"
     schedule:
       interval: "monthly"
+    commit-message:
+      prefix: "⬆️"
