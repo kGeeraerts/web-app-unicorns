@@ -53,7 +53,7 @@ Route::resource('cart', CartController::class)->only([
 
 Route::Post('cart/{cart}', [CartController::class, 'order'])->name('cart.order');
 
-//Profile routes are being handled by vendor files
+//Profile routes are being handled by vendor files (Jetstream)
 
 Route::middleware(['auth:sanctum', 'verified', 'password.confirm', 'role:vendor|editor|moderator|admin|owner'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/console', function () {
