@@ -83,7 +83,8 @@
                       class="shadow-sm mt-1 block w-full sm:text-sm rounded-md" wire:model.defer="state.biography">
             </textarea>
             <p class="mt-2 text-sm text-gray-500">
-                Brief description for your profile. Max 255 characters.
+                Brief description for your profile. Max 255 characters. <br>
+                Tell us about what life you want to give to your future dog, why you want a dog etc. <br>
             </p>
             <x-jet-input-error for="biography" class="mt-2"/>
         </div>

@@ -7,6 +7,6 @@
             <p>Sitemap</p>
         @endcan
     </div>
-    <div class="justify-center flex w-screen dark:text-white">&copy; 2020-2021 Stijn De Leeuw</div>
+    <div class="justify-center flex w-screen dark:text-white">&copy; 2021 Unicorns 🦄</div>
     <!-- https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/ -->
 </div>

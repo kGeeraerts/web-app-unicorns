@@ -66,7 +66,7 @@
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     @empty($user->birthday)
                                         <p class="text-sm text-gray-900 dark:text-gray-100">The user has not yet entered
-                                            his date of
+                                            their date of
                                             birth</p>
                                     @else
                                         <p class="text-sm text-gray-900 dark:text-gray-100">

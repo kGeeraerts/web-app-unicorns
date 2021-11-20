@@ -162,6 +162,18 @@ The Company may disclose Your Personal Data in the good faith belief that such a
 *   Protect the personal safety of Users of the Service or the public
 *   Protect against legal liability
 
+## Rights of Data Subjects
+
+We respect the rights of data subjects specified in the European Union regulation, including:
+
+*   the right to ask us what data are being collected about the data subject and how those data will be used in connection with the INTREPID project (“right to access”)
+*   the right to lodge a complaint with a supervisory authority (“right to complain”);
+*   the right to request us to correct any of data subject’s personal data that are inaccurate (“right to rectification”);
+*   the right to request us to erase data subject’s personal data (“right to erasure” also “right to be forgotten”), unless such a request would render impossible or seriously impair the achievement of the objective of that processing – including the impairment or invalidation of the research;
+*   the right to request us to restrict the processing of data subject’s personal data (“right to restriction of processing”);
+*   the right to receive the personal data related to the data subject which he/she has provided to us and to transmit those data to another controller (“right to portability”);
+*   the right to object, at any time, to us regarding the processing of data subject’s personal data (“right to object”).
+
 ## Security of Your Personal Data
 
 The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.

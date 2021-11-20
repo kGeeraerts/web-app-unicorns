@@ -77,6 +77,10 @@ Route::middleware(['auth:sanctum', 'verified', 'password.confirm', 'role:vendor|
     ]);
 });
 
+Route::get('/cookie', function (){
+    return view('cookie');
+})->name('cookie');
+
 
 Route::redirect('/welcome', '/')->name('welcome');
 Route::redirect('/home', '/')->name('home');
