@@ -9,6 +9,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Notification;
+use \Illuminate\Support\Facades\Log;
 
 class MessageController extends Controller {
 
@@ -58,8 +59,10 @@ class MessageController extends Controller {
         if (auth()->id()) {
             $message->user_id = auth()->id();
         }
+    
         $message->save();
         Notification::send(all_users_with_answer_messages_permission(), new MessageSend($message));
+        Log::info(auth()->user()->name . ' sended an email to Dogshop');
         return redirect('/contact/create')->with('status', 'Your question has been send to DogShop');
     }
 
@@ -98,6 +101,7 @@ class MessageController extends Controller {
         $message->save();
 
         Mail::to($message->email)->send(new MessageAnswer($message));
+        Log::info(auth()->user()->name . ' sended an answer to ' . $message->name);
         return redirect('/admin/inbox')->with('status', 'Answer send to '. $message->name);
 
     }
@@ -110,6 +114,7 @@ class MessageController extends Controller {
      */
     public function destroy(Message $message): RedirectResponse {
         $message->delete();
+        Log::info(auth()->user()->name . ' deleted an email');
         return redirect('/admin/inbox)');
     }
 }

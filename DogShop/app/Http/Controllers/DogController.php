@@ -6,6 +6,7 @@ use App\Models\Dog;
 use Exception;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use \Illuminate\Support\Facades\Log;
 
 class DogController extends Controller {
     /**
@@ -66,6 +67,7 @@ class DogController extends Controller {
         $dog->user_id = auth()->id();
 
         $dog->save();
+        Log::info(auth()->user()->name . ' has created a new dog');
         return redirect('/dogs')->with('status', 'Dog successfully added!');
     }
 
@@ -120,6 +122,7 @@ class DogController extends Controller {
         }
 
         $dog->save();
+        Log::info(auth()->user()->name . ' has updated a dog');
         return redirect('/dogs/' . $dog->id)->with('status', 'Dog successfully updated!');
     }
 
@@ -133,6 +136,7 @@ class DogController extends Controller {
     public function destroy(Dog $dog): RedirectResponse {
 //        Storage::delete('/public'.$dog->image);// DEV OPTION anders is de foto overal verdwenen
         $dog->delete();
+        Log::info(auth()->user()->name . ' has deleted a dog');
         return redirect('/dogs')->with('status', 'Dog successfully deleted!');
     }
 }

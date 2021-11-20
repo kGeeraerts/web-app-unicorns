@@ -8,6 +8,7 @@ use Exception;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Mail;
+use \Illuminate\Support\Facades\Log;
 
 class MemberController extends Controller {
 
@@ -60,8 +61,10 @@ class MemberController extends Controller {
         foreach (get_all_roles_names() as $roleName) {
             if (isset(request()->$roleName)) {
                 $user->assignRole($roleName);
+                Log::info(auth()->user()->name . ' has added role ' . $roleName);
             } else {
                 $user->removeRole($roleName);
+                Log::info(auth()->user()->name . ' has removed role ' . $roleName);
             }
         }
         $user->save();
@@ -78,6 +81,7 @@ class MemberController extends Controller {
     public function destroy(User $user): RedirectResponse {
         Mail::to($user->email)->send(new AccountTerminated($user));
         $user->delete();
+        Log::info(auth()->user()->name . ' has deleted ' . $user->name);
         return redirect('/admin/members')->with('status', 'User successfully removed');
     }
 }

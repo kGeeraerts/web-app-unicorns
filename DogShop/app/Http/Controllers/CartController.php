@@ -9,6 +9,7 @@ use App\Models\Product;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Mail;
+use \Illuminate\Support\Facades\Log;
 
 class CartController extends Controller {
 
@@ -31,10 +32,12 @@ class CartController extends Controller {
             $cart = Cart::firstOrCreate([
                 'user_id' => auth()->id(),
             ]);
+            Log::info(auth()->user()->name . ' has added an item to the cart');
         } else {
             $cart = Cart::firstOrCreate([
                 'session_id' => auth()->getSession()->getId(),
             ]);
+            Log::info(auth()->getSession()->getId() . ' has added an item to the cart');
         }
         return $this->save_item($cart);
     }
@@ -59,11 +62,13 @@ class CartController extends Controller {
     public function order(Cart $cart): RedirectResponse {
         if (auth()->user()) {
             Mail::to(auth()->user()->email)->send(new OrderReceived($cart));
+            Log::info(auth()->user()->email . ' has ordered');
         } else {
             $email = request()->validate([
                 'email' =>'required|email'
             ]);
             Mail::to($email)->send(new OrderReceived($cart));
+            Log::info($email . ' has ordered');
         }
         $cart->products()->delete();
         $cart->dogs()->delete();
@@ -103,12 +108,16 @@ class CartController extends Controller {
     protected function remove_item($cart, $item): RedirectResponse {
         if (request('model') == "product") {
             $cart->products()->where('cartable_id',$item)->delete();
+            Log::info(auth()->user()->name . ' has removed an item from the cart');
             return redirect()->back()->with('status', 'Product deleted from shopping cart!');
         } elseif (request('model') == "dog") {
             $cart->dogs()->where('cartable_id',$item)->delete();
+            Log::info(auth()->user()->name . ' has removed an item from the cart');
             return redirect()->back()->with('status', 'Dog deleted from shopping cart!');
         } else {
+            Log::info(auth()->user()->name . ' wants to remove a non-existent item from the cart ');
             return redirect()->back()->with('status', 'ERROR: NOT POSSIBLE TO DELETE FROM CART');
+            
         }
     }
 }
