@@ -17,6 +17,7 @@
         "laravel/sanctum": "^v2.12.1",
         "laravel/tinker": "^v2.6.2",
         "livewire/livewire": "^v2.7.2",
+        "spatie/laravel-cookie-consent": "^3.1",
         "spatie/laravel-permission": "^5.3.1"
     },
     "require-dev": {
