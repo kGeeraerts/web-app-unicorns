@@ -17,9 +17,9 @@ class CartController extends Controller {
      *
      * @return void
      */
-//    public function __construct() {
-//        $this->authorizeResource(Cart::class, 'cart');
-//    }
+    public function __construct() {
+        $this->authorizeResource(Cart::class, 'cart');
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -31,13 +31,12 @@ class CartController extends Controller {
             $cart = Cart::firstOrCreate([
                 'user_id' => auth()->id(),
             ]);
-            return $this->save_item($cart);
         } else {
             $cart = Cart::firstOrCreate([
                 'session_id' => auth()->getSession()->getId(),
             ]);
-            return $this->save_item($cart);
         }
+        return $this->save_item($cart);
     }
 
     /**
@@ -101,7 +100,7 @@ class CartController extends Controller {
         }
     }
 
-    protected function remove_item($cart, $item) {
+    protected function remove_item($cart, $item): RedirectResponse {
         if (request('model') == "product") {
             $cart->products()->where('cartable_id',$item)->delete();
             return redirect()->back()->with('status', 'Product deleted from shopping cart!');
