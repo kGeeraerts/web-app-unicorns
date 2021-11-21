@@ -81,7 +81,7 @@ We vertrekken vanuit de eindgebruiker: onze webapp wordt publiek op het internet
 
 - Combell 
 
-  Ons product maakt gebruik van de domein hosting service van Combell.
+  De domein naam van onze site is geregistreerd bij Combell. De nameservers van Combell verwijzen door naar de DNS van Cloudflare. Overigs komt Combell niet in het plaatje.
 
 - Cloudflare
 
@@ -114,11 +114,11 @@ Daarnaast wordt de webapp gehost op een EC2 instantie binnen de AWS trust bounda
 
 ### Andere security maatregels
 
-- De pagina’s die enkel toegankelijk zijn voor administrators zijn extra beveiligd door de gebruiker nog eens zijn/haar wachtwoord in te voeren.
+- Als een administrator toegang wilt to de daarbij horende functionaliteiten zal deze user gevraagd worden om zijn/haar wachtwoord opnieuw in te geven. Eens dit wachtwoord geverifiëerd is krijgt de admin een drie uur durende sessie, waar hij/zij geen wachtwoord meer moet ingeven (tenzij deze uitlogd). 
 - Werken met verschillende rollen binnen de webapp (AuthZ)
 - Maximum aantal inlogpogingen
 - Toepassen van AVG
-- 2FA 
+- 2FA: Wij bieden voor iedere gebruiker een 2FA mogelijkheid aan. Als 2FA toepassing hebben wij voor de optie gekozen dat de users gebruik kunnen maken van 2FA applicaties (zoals een google authenticator). De code van de authenticator applicatie zal gevraagd worden telkens een gebruiker zich probeert aan te melden.
 
 ## Deployment
 
