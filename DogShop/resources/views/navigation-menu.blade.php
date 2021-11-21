@@ -16,10 +16,7 @@
                     <x-jet-nav-link href="{{ route('dogs.index') }}" :active="request()->routeIs('dogs.index')">
                         {{ __('Dogs') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('products.index') }}" :active="request()->routeIs('products.index')">
-                        {{ __('Products') }}
-                    </x-jet-nav-link>
-                    @hasanyrole('vendor|editor|moderator|admin|owner')
+                    @hasanyrole('vendor|admin|owner')
                     <div class="hidden md:flex md:items-center md:ml-6">
                         <x-jet-dropdown>
                             <x-slot name="trigger">
@@ -60,10 +57,10 @@
                     @endhasanyrole
                 </div>
             </div>
-
+            @php $cartRoute = route('cart.show', get_cart_id()) @endphp
             <!-- Settings Dropdown -->
             <div class="hidden md:flex md:items-center md:ml-6 dark:text-white">
-                <a href="{{route('cart.show', get_cart_id())}}">
+                <a href="{{$cartRoute}}">
                     <!-- Shopping cart -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-6" fill="none" stroke="currentColor"
                          viewBox="0 0 24 24">
@@ -153,10 +150,6 @@
             <x-jet-responsive-nav-link href="{{ route('dogs.index') }}" :active="request()->routeIs('dogs.index')">
                 {{ __('Dogs') }}
             </x-jet-responsive-nav-link>
-            <x-jet-responsive-nav-link href="{{ route('products.index') }}"
-                                       :active="request()->routeIs('products.index')">
-                {{ __('Products') }}
-            </x-jet-responsive-nav-link>
             @hasanyrole('vendor|editor|moderator|admin|owner')
             <div class="pt-4 pb-1 border-t border-gray-200"></div>
             <div class="ml-4 dark:text-white">{{ __('Admin') }}</div>
@@ -182,6 +175,11 @@
         </div>
 
         <!-- Responsive Settings Options -->
+        @guest
+            <div class="py-4 border-t border-gray-200">
+                <x-jet-responsive-nav-link href="{{$cartRoute}}" :active="request()->routeIs('cart.show')">Shopping cart</x-jet-responsive-nav-link>
+            </div>
+        @endguest
         <div class="pt-4 pb-1 border-t border-gray-200">
             @auth
                 <div class="flex items-center px-4">
@@ -195,7 +193,7 @@
                         <div
                             class="font-medium text-sm text-gray-500 dark:text-gray-200">{{ Auth::user()->email }}</div>
                     </div>
-                    <a href="{{route('cart.show', get_cart_id())}}" class="ml-auto">
+                    <a href="{{$cartRoute}}" class="ml-auto">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-6 rounded bg-gray-800 text-white"
                              fill="none"
                              stroke="currentColor">

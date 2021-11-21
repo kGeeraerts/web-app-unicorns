@@ -15,7 +15,6 @@ class DatabaseSeeder extends Seeder {
             RoleSeeder::class,
             UserSeeder::class,
             DogSeeder::class,
-            ProductSeeder::class,
             MessageSeeder::class,
         ]);
     }

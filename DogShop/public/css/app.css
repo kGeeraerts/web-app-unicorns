@@ -456,7 +456,7 @@ button,
  * as it triggers the better focus styles even for links, which still use a dotted
  * outline in Firefox by default.
  */
- 
+
 :-moz-focusring {
 	outline: auto;
 }
@@ -523,14 +523,14 @@ samp {
  *    CSS Remedy, with `svg` added as well.
  *
  *    https://github.com/mozdevs/cssremedy/issues/14
- * 
+ *
  * 2. Add `vertical-align: middle` to align replaced elements more
  *    sensibly by default when overriding `display` by adding a
  *    utility like `inline`.
  *
  *    This can trigger a poorly considered linting error in some
  *    tools but is included by design.
- * 
+ *
  *    https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210
  */
 
@@ -1127,6 +1127,10 @@ select {
 	right: 0px;
 	bottom: 0px;
 	left: 0px;
+}
+.inset-x-0 {
+	left: 0px;
+	right: 0px;
 }
 .left-0 {
 	left: 0px;
@@ -1762,13 +1766,17 @@ select {
 	--tw-bg-opacity: 1;
 	background-color: rgba(209, 250, 229, var(--tw-bg-opacity));
 }
-.bg-yellow-600 {
-	--tw-bg-opacity: 1;
-	background-color: rgba(217, 119, 6, var(--tw-bg-opacity));
-}
 .bg-yellow-100 {
 	--tw-bg-opacity: 1;
 	background-color: rgba(254, 243, 199, var(--tw-bg-opacity));
+}
+.bg-yellow-400 {
+	--tw-bg-opacity: 1;
+	background-color: rgba(251, 191, 36, var(--tw-bg-opacity));
+}
+.bg-yellow-600 {
+	--tw-bg-opacity: 1;
+	background-color: rgba(217, 119, 6, var(--tw-bg-opacity));
 }
 .bg-yellow-50 {
 	--tw-bg-opacity: 1;
@@ -1923,6 +1931,12 @@ select {
 }
 .pt-0 {
 	padding-top: 0px;
+}
+.pb-2 {
+	padding-bottom: 0.5rem;
+}
+.pr-2 {
+	padding-right: 0.5rem;
 }
 .pb-8 {
 	padding-bottom: 2rem;
@@ -2105,6 +2119,10 @@ select {
 	--tw-text-opacity: 1;
 	color: rgba(6, 95, 70, var(--tw-text-opacity));
 }
+.text-yellow-800 {
+	--tw-text-opacity: 1;
+	color: rgba(146, 64, 14, var(--tw-text-opacity));
+}
 .text-yellow-500 {
 	--tw-text-opacity: 1;
 	color: rgba(245, 158, 11, var(--tw-text-opacity));
@@ -2252,6 +2270,10 @@ select {
 .hover\:bg-red-700:hover {
 	--tw-bg-opacity: 1;
 	background-color: rgba(185, 28, 28, var(--tw-bg-opacity));
+}
+.hover\:bg-yellow-300:hover {
+	--tw-bg-opacity: 1;
+	background-color: rgba(252, 211, 77, var(--tw-bg-opacity));
 }
 .hover\:bg-yellow-700:hover {
 	--tw-bg-opacity: 1;
@@ -2897,6 +2919,10 @@ select {
 
 	.md\:mt-5 {
 		margin-top: 1.25rem;
+	}
+
+	.md\:inline {
+		display: inline;
 	}
 
 	.md\:flex {
