@@ -18,6 +18,8 @@ class UserSeeder extends Seeder {
         $owner->syncRoles('owner');
         $owner = User::factory()->create(['name' => 'Lollydepp', 'email' => 'lore.van.langenhove@icloud.com', 'email_verified_at' => '2020-11-16 13:24:14', 'password' => '$2y$10$UX6lGxc6APxGtKImJj1/SuwQ12V9SBPgIH4qRUL5a0FTe5FEI9w9a']);
         $owner->syncRoles('owner');
+        $owner = User::factory()->create(['name' => 'Robbe Poczo', 'email' => 'robbe.poczo@student.ehb.be', 'email_verified_at' => '2021-11-21 19:12:14', 'password' => '$2y$10$NLY9QIM9tRJKh59UzDRmoe4IxiZCgIQoeqd1k1mQ.HdCW0B31Lj3i']);
+        $owner->syncRoles('owner');
         $admin = User::factory()->create();
         $admin->syncRoles('admin');
         $vendor = User::factory()->create();
