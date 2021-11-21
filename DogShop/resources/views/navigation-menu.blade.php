@@ -16,10 +16,7 @@
                     <x-jet-nav-link href="{{ route('dogs.index') }}" :active="request()->routeIs('dogs.index')">
                         {{ __('Dogs') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('products.index') }}" :active="request()->routeIs('products.index')">
-                        {{ __('Products') }}
-                    </x-jet-nav-link>
-                    @hasanyrole('vendor|editor|moderator|admin|owner')
+                    @hasanyrole('vendor|admin|owner')
                     <div class="hidden md:flex md:items-center md:ml-6">
                         <x-jet-dropdown>
                             <x-slot name="trigger">
@@ -152,10 +149,6 @@
             </x-jet-responsive-nav-link>
             <x-jet-responsive-nav-link href="{{ route('dogs.index') }}" :active="request()->routeIs('dogs.index')">
                 {{ __('Dogs') }}
-            </x-jet-responsive-nav-link>
-            <x-jet-responsive-nav-link href="{{ route('products.index') }}"
-                                       :active="request()->routeIs('products.index')">
-                {{ __('Products') }}
             </x-jet-responsive-nav-link>
             @hasanyrole('vendor|editor|moderator|admin|owner')
             <div class="pt-4 pb-1 border-t border-gray-200"></div>

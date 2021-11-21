@@ -33,10 +33,6 @@ class Cart extends Model {
         return $this->morphedByMany(Dog::class, 'cartable');
     }
 
-    public function products(): MorphToMany {
-        return $this->morphedByMany(Product::class, 'cartable');
-    }
-
     public function customer(): BelongsTo {
         return $this->belongsTo(User::class, 'user_id');
     }

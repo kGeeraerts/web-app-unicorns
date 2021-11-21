@@ -4,7 +4,6 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\DogController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\MessageController;
-use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,10 +28,6 @@ Route::get('/about', function () {
 
 Route::resource('/dogs', DogController::class)->parameters([
     'dogs' => 'dog'
-]);
-
-Route::resource('/products', ProductController::class)->parameters([
-    'products' => 'product'
 ]);
 
 Route::resource('/member', MemberController::class)->parameters([
