@@ -1,8 +1,8 @@
 <x-app-layout>
-    <x-slot name="title"> {{__('Shopping Cart') . ' - ' . config('app.name', 'Laravel')}}</x-slot>
+    <x-slot name="title"> {{__('Book appointment') . ' - ' . config('app.name', 'Laravel')}}</x-slot>
     <x-slot name="header">
         <h2 class="font-semibold text-2xl text-gray-900 leading-tight dark:text-white">
-            {{ __('Shopping Cart') }}
+            {{ __('Book appointment') }}
         </h2>
     </x-slot>
     @include('alerts.confirmation-alert')
@@ -15,7 +15,7 @@
                         <tr>
                             <th scope="col"
                                 class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-200 uppercase tracking-wider">
-                                {{__('Nummer')}}
+                                {{__('Number')}}
                             </th>
                             <th scope="col"
                                 class="pl-20 pr-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-200 uppercase tracking-wider">
@@ -24,10 +24,6 @@
                             <th scope="col"
                                 class="hidden md:flex px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-200 uppercase tracking-wider">
                                 {{__('description')}}
-                            </th>
-                            <th scope="col"
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-200 uppercase tracking-wider">
-                                {{__('price')}}
                             </th>
                             <th scope="col"
                                 class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-200 uppercase tracking-wider">
@@ -61,24 +57,12 @@
                                         {{$dog->description}}
                                     </p>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <p class="text-sm text-gray-900 dark:text-gray-100">
-                                        € {{$dog->price}} @php $total = $total + $dog->price@endphp
-                                    </p>
-                                </td>
                                 <td class="pl-6 py-4 whitespace-nowrap space-x-2 mr-4">
                                     {{--                                    @include('button-components.edit-button', ['route'=>'cart.edit', 'item'=>$dog])--}}
                                     @include('button-components.delete-button', ['route'=>'cart.destroy', 'counter'=>$counter, 'item'=>$dog, 'model'=>'dog']) @php $counter++ @endphp
                                 </td>
                             </tr>
                         @endforeach
-                        <tr class="dark:bg-gray-800 dark:text-white">
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td class="p-2 font-black">€ {{$total}}</td>
-                            <td></td>
-                        </tr>
                         </tbody>
                     </table>
                 </div>
@@ -91,7 +75,7 @@
                     @guest
                         @include('form-components.input-field', ['type'=>'email', 'name'=>'email' ])
                     @endguest
-                    <x-jet-button>{{__('Order')}}</x-jet-button>
+                    <x-jet-button>{{__('Book')}}</x-jet-button>
                 </div>
             </form>
         </div>

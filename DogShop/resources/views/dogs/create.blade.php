@@ -10,7 +10,6 @@
         <div class="grid grid-cols-1 gap-6 max-w-xl">
             @include('form-components.input-field', ["type"=>"text", "name"=>"name"])
             @include('form-components.input-field', ["type"=>"text", "name"=>"description"])
-            @include('form-components.number-input-field', ["type"=>"text", "name"=>"price"])
             @include('form-components.image-input', ["type"=>"text", "name"=>"description", "required"=>"required",])
             @include('form-components.checkbox', ["name"=>"available"])
         </div>

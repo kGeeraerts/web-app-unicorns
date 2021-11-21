@@ -11,7 +11,6 @@
         <div class="grid grid-cols-1 gap-6 max-w-xl">
             @include('form-components.input-field', ["type"=>"text", "name"=>"name", "value"=>$dog->name])
             @include('form-components.input-field', ["type"=>"text", "name"=>"description", "value"=>$dog->description])
-            @include('form-components.number-input-field', ["type"=>"text", "name"=>"price", "value"=>$dog->price])
             @include('form-components.image-input')
             @include('form-components.checkbox', ["name"=>"available", "check"=>$dog->available])
         </div>

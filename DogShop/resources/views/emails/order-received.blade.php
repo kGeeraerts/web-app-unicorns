@@ -1,7 +1,7 @@
 @component('mail::message')
-# Order received
+# Appointment received
 
-Your order has been received!
+We noted your appointment! 
 
 
 Thanks,<br>

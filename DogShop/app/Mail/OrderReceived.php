@@ -25,6 +25,6 @@ class OrderReceived extends Mailable {
      * @return $this
      */
     public function build() {
-        return $this->markdown('emails.order-received');
+        return $this->markdown('emails.order-received')->subject('Appointment received');
     }
 }

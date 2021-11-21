@@ -50,7 +50,6 @@ class DogController extends Controller {
         $dog = new Dog(request()->validate([
             'name' => 'required|min:3|max:255',
             'description' => 'required|min:40|max:255',
-            'price' => 'required|numeric|min:0',
             'image' => 'required|image',
         ]));
 
@@ -65,6 +64,8 @@ class DogController extends Controller {
         }
         $dog->image = substr_replace($path, '', 0, 6);
         $dog->user_id = auth()->id();
+
+        $dog->price = 0;
 
         $dog->save();
         Log::info(auth()->user()->name . ' has created a new dog');
@@ -100,8 +101,7 @@ class DogController extends Controller {
     public function update(Dog $dog): RedirectResponse {
         $dog->update(request()->validate([
             'name' => 'required|min:3|max:255',
-            'description' => 'required|min:40|max:255',
-            'price' => 'required|numeric|min:0',
+            'description' => 'required|min:40|max:255'
 //            'image' => 'required|image',
         ]));
 
