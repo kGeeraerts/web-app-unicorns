@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
 class Cart extends Model {
     use HasFactory;
@@ -15,6 +17,7 @@ class Cart extends Model {
      */
     protected $fillable = [
         'session_id',
+        'user_id',
     ];
 
     /**
@@ -23,19 +26,18 @@ class Cart extends Model {
      * @var array
      */
     protected $hidden = [
-        'user_id',
         'available_from',
     ];
 
-    public function dogs() {
+    public function dogs(): MorphToMany {
         return $this->morphedByMany(Dog::class, 'cartable');
     }
 
-    public function products() {
+    public function products(): MorphToMany {
         return $this->morphedByMany(Product::class, 'cartable');
     }
 
-    public function customer() {
+    public function customer(): BelongsTo {
         return $this->belongsTo(User::class, 'user_id');
     }
 

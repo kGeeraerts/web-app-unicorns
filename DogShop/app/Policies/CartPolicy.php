@@ -5,6 +5,7 @@ namespace App\Policies;
 use App\Models\Cart;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
+use Illuminate\Support\Facades\Log;
 
 class CartPolicy {
     use HandlesAuthorization;
@@ -22,20 +23,19 @@ class CartPolicy {
     /**
      * Determine whether the user can view the model.
      *
-     * @param User $user
+     * @param User|null $user
      * @param Cart $cart
      * @return bool
      */
     public function view(?User $user, Cart $cart): bool {
-        if ($user->id == $cart->user_id) {
+        if ($user !== null && $user->id == $cart->user_id) {
             return true;
         }
 
-        if (auth()->getSession()->getId() == $cart->session_id){
+        if (auth()->getSession()->getId() == $cart->session_id) {
             return true;
         }
-
-        return $user->can('view-all-carts');
+        return $user?->can('view-all-carts') ?? false;
     }
 
     /**
