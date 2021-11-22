@@ -64,7 +64,7 @@ class CartController extends Controller {
             Log::info(auth()->user()->email . ' has ordered');
         } else {
             $email = request()->validate([
-                'email' =>'required|email'
+                'email' => 'required|email'
             ]);
             Mail::to($email)->send(new OrderReceived($cart));
             Log::info($email . ' has ordered');
@@ -89,25 +89,25 @@ class CartController extends Controller {
         }
     }
 
-    protected function save_item($cart): RedirectResponse {   
+    protected function save_item($cart): RedirectResponse {
         if (request('model') == "dog") {
             $dog = Dog::find(request()->item);
             $cart->dogs()->save($dog);
-            return redirect()->back()->with('status', 'Dog added to appointment !');
+            return redirect()->back()->with('status', 'Dog added to appointment!');
         } else {
+            Log::error(auth()?->user()?->name ?? auth()->getSession()->getId() . ' wants to save a non-existent item from the cart ');
             return redirect()->back()->with('status', 'ERROR: NOT POSSIBLE TO ADD');
         }
     }
 
     protected function remove_item($cart, $item): RedirectResponse {
         if (request('model') == "dog") {
-            $cart->dogs()->where('cartable_id',$item)->delete();
-            Log::info(auth()->user()->name . ' has removed an item from the cart');
-            return redirect()->back()->with('status', 'Dog deleted from appointment !');
+            $cart->dogs()->where('cartable_id', $item)->delete();
+            return redirect()->back()->with('status', 'Dog deleted from appointment!');
         } else {
-            Log::info(auth()->user()->name . ' wants to remove a non-existent item from the cart ');
+            Log::error(auth()?->user()?->name ?? auth()->getSession()->getId() . ' wants to remove a non-existent item from the cart ');
             return redirect()->back()->with('status', 'ERROR: NOT POSSIBLE TO DELETE');
-            
+
         }
     }
 }
