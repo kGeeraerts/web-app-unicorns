@@ -15,7 +15,7 @@ class CreateDogsTable extends Migration {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('name');
-            $table->string('description');
+            $table->string('description', 300);
             $table->float('price');
             $table->text('image');
             $table->boolean('available')->default(0);
