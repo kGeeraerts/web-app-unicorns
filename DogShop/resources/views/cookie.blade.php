@@ -9,22 +9,13 @@
     <div class="font-sans text-gray-900 antialiased">
         <div class="pt-4 bg-gray-100 dark:bg-gray-700">
             <div class="min-h-screen flex flex-col items-center pt-6 sm:pt-0">
-                <div>
-                    <a href="http://127.0.0.1:8000/home">
-                        <picture>
-                            <source srcset="/apple-touch-icon-rounded.png" media="(prefers-color-scheme: dark)">
-                            <img src="/safari-pinned-tab.svg" alt="Logo dogShop" class="w-16 h-16">
-                        </picture>
-                    </a>
-                </div>
-
                 <div
                     class="w-full sm:max-w-2xl mt-6 p-6 bg-white dark:bg-gray-400 shadow-md overflow-hidden sm:rounded-lg prose">
 
                     <h1>Cookie policy</h1>
                     <p>This cookie policy (“Policy”) describes what cookies are and how and they&#039;re being used by
                         the <a target="_blank" rel="nofollow"
-                            href="https://dogshop.desideriushogeschool.be">dogshop.desideriushogeschool.be</a> website
+                               href="{{route('home')}}">dogshop.desideriushogeschool.be</a> website
                         (“Website” or
                         “Service”) and any of its related products and services (collectively, “Services”). This Policy
                         is a legally
@@ -45,7 +36,7 @@
                         declining the use of cookies. For further information on how we use, store and keep your
                         personal data secure,
                         see our <a target="_blank" rel="nofollow"
-                            href="https://dogshop.desideriushogeschool.be/privacy-policy">privacy
+                                   href="https://dogshop.desideriushogeschool.be/privacy-policy">privacy
                             policy</a>.</p>
                     <h2>What are cookies?</h2>
                     <p>Cookies are small pieces of data stored in text files that are saved on your computer or other
@@ -68,7 +59,8 @@
                         content or provide advertising or analytics services on the Website (&quot;third party
                         cookies&quot;). These
                         third parties can recognize you when you visit our website and also when you visit certain other
-                        websites. <a target="_blank" href="https://www.websitepolicies.com/blog/cookies">Click here</a>
+                        websites. <a target="_blank" rel="noopener" href="https://www.websitepolicies.com/blog/cookies">Click
+                            here</a>
                         to learn more about
                         cookies and how they work.</p>
                     <h2>What type of cookies do we use?</h2>
@@ -115,7 +107,8 @@
                         the terms of this
                         Policy, you are not authorized to access or use the Website and Services. This cookie policy was
                         created with
-                        the <a target="_blank" href="https://www.websitepolicies.com/cookie-policy-generator">cookie
+                        the <a target="_blank" rel="noopener"
+                               href="https://www.websitepolicies.com/cookie-policy-generator">cookie
                             policy
                             generator</a>.</p>
                     <h2>Contacting us</h2>
@@ -123,7 +116,7 @@
                         we encourage you
                         to contact us using the details below:</p>
                     <p><a target="_blank" rel="nofollow"
-                            href="https://dogshop.desideriushogeschool.be/contact/create">https://dogshop.desideriushogeschool.be/contact/create</a>
+                          href="https://dogshop.desideriushogeschool.be/contact/create">https://dogshop.desideriushogeschool.be/contact/create</a>
                     </p>
                     <p>This document was last updated on November 20, 2021</p>
 

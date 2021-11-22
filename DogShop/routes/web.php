@@ -77,6 +77,6 @@ Route::get('/cookie', function (){
 })->name('cookie');
 
 
-Route::redirect('/welcome', '/')->name('welcome');
+Route::redirect('/welcome', '/')->name('welcome')->middleware('verified');
 Route::redirect('/home', '/')->name('home');
 Route::redirect('/dashboard', '/')->name('dashboard');
