@@ -67,7 +67,7 @@ class CartController extends Controller {
                 'email' => 'required|email'
             ]);
             Mail::to($email)->send(new OrderReceived($cart));
-            Log::info($email . ' has ordered');
+            Log::info(reset($email) . ' has ordered');
         }
         $cart->dogs()->delete();
         return redirect('home')->with('status', 'Appointment request received');

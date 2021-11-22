@@ -101,7 +101,12 @@ return [
     | to auto-generate this. Patterns are supported in details.
     |
     */
-    'ignore_errors' => [],
+    'ignore_errors' => [
+        Enlightn\Enlightn\Analyzers\Security\FillableForeignKeyAnalyzer::class => [[
+                'path' => 'app/Models/Cart.php',
+                'details' => 'Potential foreign key session_id declared as fillable and available for mass assignment.'
+            ]]
+        ],
 
     /*
     |--------------------------------------------------------------------------
