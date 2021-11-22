@@ -30,7 +30,7 @@ Deze website bevat enkele statische pagina's voor informatie rond de vzw zelf. M
 Om deze website te maken, gaan we gebruik maken van het web framework Laravel en de hierbij horende database. Indien nodig zal er ook gebruik gemaakt worden van een externe API (zelfgeschreven).
 In de database zullen de gegevens van de gebruikers en de honden terug te vinden zijn.
 
-Indien mogelijk zouden we alles in de cloud laten draaien: bv. web hosting via Combell, api hosting via AWS amplify (of ec2) en database hosting via aws of azure.
+Indien mogelijk zouden we alles in de cloud laten draaien: bv. web hosting via Combell, api hosting via AWS amplify (of ec2) en database hosting via aws of via Erasmushogeschool Brussel.
 
 ## Acceptance criteria
 
