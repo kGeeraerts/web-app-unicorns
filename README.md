@@ -121,7 +121,7 @@ Daarnaast wordt de webapp gehost op een EC2 instantie binnen de AWS trust bounda
 | Spoofing               | Iemand die zich voordoet als een andere user/systeem                         | Alle datastromen authenticeren                                           | Alle componenten |
 | Tampering              | Aangepaste data toelaten                                                     | Alle data controleren voor deze wordt opgeslagen/verstuurd               | De webapp        |
 | Repudiation            | Onvoldoende loggen                                                           | Alles loggen                                                             | De webapp        |
-| Information Disclosure | Persoonlijke data dat gelekt wordt                                           | Enkel noodzakelijke data bijhouden + transparant zijn over data breaches | database         |
+| Information Disclosure | Persoonlijke data dat gelekt wordt                                           | Enkel noodzakelijke data bijhouden + transparant zijn over data breaches | Database         |
 | Denail Of Service      | De webbapp buiten gebruik stellen doormiddel van het uitbuiten van resources | Cloudflare + systemen goed beveiligen                                    | Alle componenten |
 | Elevation of Privilege | Een user dat een hogere rol probeert te verkrijgen                           | Logging + bij een breach transparante communicatie met de eindgebruiker  | De webapp        |
 
@@ -142,6 +142,8 @@ Daarnaast wordt de webapp gehost op een EC2 instantie binnen de AWS trust bounda
 ## Deployment
 
 _minimally, this section contains a public URL of the app. A description of how your software is deployed is a bonus. Do you do this manually, or did you manage to automate? Have you taken into account the security of your deployment process?_
+
+Website Url: https://dogshop.desideriushogeschool.be/
 
 ## _you may want further sections_
 
