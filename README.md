@@ -73,7 +73,7 @@ Indien mogelijk zouden we alles in de cloud laten draaien: bv. web hosting via C
 
 ## Threat model
 
-![Threat Model image](documents/images/ThreatModel-v3.png)
+![Threat Model image](documents/images/ThreatModel-v4.png)
 
 ### Uitleg diagram
 
