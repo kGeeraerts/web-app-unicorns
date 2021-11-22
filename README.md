@@ -100,7 +100,7 @@ Daarnaast wordt de webapp gehost op een EC2 instantie binnen de AWS trust bounda
 
 ### OWASP Top 10
 
-  Name |Bedreiging | Oplossing |Plaats
+  Name | Bedreiging | Oplossing | Plaats
   ---| ---| ---| ---
   Broken Access Control | De toegang verlenen voor onbevoegden op de componenten | Alle componenten afschermen aan de hand van authenticatie & authorisatie | De webapp
   Cryptographic Failures | Het niet beveiligen van gevoelige data | Gevoelige data encrypteren en enkel data opslagen die noodzakelijk is | Dit wordt binnen heel het threat diagram toegepast.
@@ -111,6 +111,22 @@ Daarnaast wordt de webapp gehost op een EC2 instantie binnen de AWS trust bounda
   Identification and Authentication Failures | Identicatie en autorisatie niet afschermen | Login & registratie beveiligen aan de hand van bestaande frameworks + controleren op zwakke wachtwoorden | De webapp
   Software and Data Integrity Failures | Het gebruiken van malafide software plug-ins | Het is cruciaal dat de CI/CD pipelines afgescheiden zijn van elkaar en dat zowel de ACL’s als de pipelines zelf correct geconfigureerd zijn. Gebruik maken van de Dependabot die de dependencies up-to-date houdt en ook waarschuwt wanneer er een malafide dependencies gebruikt wordt. Code wordt geschreven op aparte branches. Bij een pull request wordt de code nagekeken door een teamlid en ook door enlightn | De webapp + GitHub + Enlightn
   Security Logging and Monitoring Failures | Het niet loggen van activiteiten | Cruciale activiteiten loggen m.b.v. o.a. Laravel/Telescope | De webapp
+
+### STRIDE
+
+Name |Bedreiging | Oplossing | Plaats
+  ---| ---| ---| ---
+  Spoofing | Iemand die zich voordoet als een andere user/systeem | Alle datastromen authenticeren | Alle componenten
+  Tampering | Aangepaste data toelaten  | Alle data controlleren voor deze wordt opgeslagen/verstuurd | De webapp
+  Repudiation | Onvoldoende loggen | Alles loggen | De webapp
+  Information Disclosure | Persoonlijke data dat gelekt wordt | Enkel noodzakelijke data bijhouden + transparant zijn over data breaches | database 
+  Denail Of Service | De webbapp buiten gebruik stellen doormiddel van het uitbuiten van resources | Cloudflare + systemen goed beveiligen | Alle componenten 
+  Elevation of Privilege | Een user dat een hogere rol probeert te verkrijgen | Logging + bij een breach transparante communicatie met de eindgebruiker | De webapp
+
+  ### Speciefieke Threads 
+  Name |Bedreiging | Oplossing | Plaats
+  ---| ---| ---| ---
+  AWS Breach | AWS wordt gecomprimeerd | Transparante communicatie met de eindgebruiker | De AWS trust boundry
 
 ### Andere security maatregels
 
