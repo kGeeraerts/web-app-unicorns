@@ -133,7 +133,7 @@ Daarnaast wordt de webapp gehost op een EC2 instantie binnen de AWS trust bounda
 
 ### Andere security maatregels
 
-- Als een administrator toegang wilt to de daarbij horende functionaliteiten zal deze user gevraagd worden om zijn/haar wachtwoord opnieuw in te geven. Eens dit wachtwoord geverifiëerd is, krijgt de admin een drie uur durende sessie, waar hij/zij geen wachtwoord meer moet ingeven (tenzij deze uitlogd).
+- Als een administrator toegang wilt tot de daarbij horende functionaliteiten zal deze user gevraagd worden om zijn/haar wachtwoord opnieuw in te geven. Eens dit wachtwoord geverifiëerd is, krijgt de admin een drie uur durende sessie, waar hij/zij geen wachtwoord meer moet ingeven (tenzij deze uitlogd).
 - Werken met verschillende rollen binnen de webapp (AuthZ)
 - Maximum aantal inlogpogingen
 - Toepassen van AVG
@@ -145,13 +145,9 @@ _minimally, this section contains a public URL of the app. A description of how 
 
 Website Url: https://dogshop.desideriushogeschool.be/
 
-## _you may want further sections_
-
-_especially if the use of your application is not self-evident_
-
 ## Handy dev links
 
 - [Trello](https://trello.com/b/k9sE6Qd0/dogshop)
 - [Canvas](https://ehb.instructure.com/courses/22745/assignments)
 - [GitHub](https://github.com/EHB-TI/web-app-unicorns)
-- [Website](https://desideriushogeschool.be)
+- [Website](https://dogshop.desideriushogeschool.be)
