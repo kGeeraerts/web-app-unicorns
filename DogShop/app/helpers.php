@@ -2,7 +2,10 @@
 
 use App\Models\User;
 use App\Models\Cart;
+use Illuminate\Database\QueryException;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Redirect;
 use Spatie\Permission\Models\Role;
 
 function all_users_with_answer_messages_permission() {
@@ -29,21 +32,21 @@ function pick_dog(): string {
 
 function get_cart_id() {
     if (auth()->user()) {
+        Log::info("get_cart_id:User");
         $cart = Cart::firstOrCreate([
             'user_id' => auth()->id(),
         ]);
-        \Illuminate\Support\Facades\Log::alert("get_cart_id:User");
     } else {
+        Log::info("get_cart_id:Session");
         try {
             $cart = Cart::firstOrCreate([
                 'session_id' => auth()->getSession()->getId(),
             ]);
-        } catch (\Illuminate\Database\QueryException $exception) {
-            \Illuminate\Support\Facades\Redirect::home();
-            \Illuminate\Support\Facades\Log::info($exception);
+        } catch (QueryException $exception) {
+            Log::error($exception);
+            Redirect::back();
             return 0;
         }
-        \Illuminate\Support\Facades\Log::alert("get_cart_id:Session");
     }
     return $cart->id;
 }
