@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\User;
 use DateTime;
 use DateTimeZone;
 use Illuminate\Support\Facades\Gate;
@@ -39,6 +40,10 @@ class TelescopeServiceProvider extends TelescopeApplicationServiceProvider {
                 $entry->isFailedJob() ||
                 $entry->isScheduledTask() ||
                 $entry->hasMonitoredTag();
+        });
+
+        Telescope::avatar(function ($id, $email) {
+            return User::find($id)->profile_photo_url;
         });
     }
 
