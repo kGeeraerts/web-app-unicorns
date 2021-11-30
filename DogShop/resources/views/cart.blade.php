@@ -43,7 +43,7 @@
                                     <div class="flex items-center space-x-4">
                                         <div class="flex-shrink-0 h-10 w-10">
                                             <img class="h-10 w-10 rounded-full object-cover"
-                                                 src="{{ $dog->image }}" alt="Your future dog">
+                                                 src="{{ Storage::url($dog->image) }}" alt="Your future dog">
                                         </div>
                                         <a href="{{route('dogs.show', $dog)}}">
                                             <p class="text-sm text-gray-900 dark:text-gray-100">
