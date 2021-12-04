@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\DB;
@@ -12,14 +13,14 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable implements MustVerifyEmail
-{
+class User extends Authenticatable implements MustVerifyEmail {
     use HasApiTokens;
     use HasFactory;
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
     use HasRoles;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -63,11 +64,11 @@ class User extends Authenticatable implements MustVerifyEmail
         'profile_photo_url',
     ];
 
-    public function session(){
+    public function session(): bool {
         return DB::table('sessions')->where('user_id', $this->id)->exists();
     }
 
-    public function cart(){
+    public function cart(): HasOne {
         return $this->hasOne(Cart::class);
     }
 }

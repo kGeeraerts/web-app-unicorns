@@ -46,6 +46,7 @@ class RoleSeeder extends Seeder
         $admin = Role::create(['name' => 'admin']);
         $admin->givePermissionTo('answer-messages');
         $admin->givePermissionTo('view-unavailable-dogs');
+        $admin->givePermissionTo('add-dog');
         $admin->givePermissionTo('edit-any-dog');
         $admin->givePermissionTo('remove-any-dog');
         $admin->givePermissionTo('view-all-carts');

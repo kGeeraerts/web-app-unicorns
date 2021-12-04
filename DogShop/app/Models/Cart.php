@@ -26,7 +26,7 @@ class Cart extends Model {
      * @var array
      */
     protected $hidden = [
-        'available_from',
+
     ];
 
     public function dogs(): MorphToMany {
