@@ -101,8 +101,8 @@ class DogController extends Controller {
     public function update(Dog $dog): RedirectResponse {
         $dog->update(request()->validate([
             'name' => 'required|min:3|max:255',
-            'description' => 'required|min:40|max:255'
-//            'image' => 'required|image',
+            'description' => 'required|min:40|max:255',
+            'image' => 'image',
         ]));
 
         if (isset(request()->available)) {
