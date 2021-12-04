@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder {
             UserSeeder::class,
             DogSeeder::class,
             MessageSeeder::class,
+            AboutSeeder::class,
         ]);
     }
 }

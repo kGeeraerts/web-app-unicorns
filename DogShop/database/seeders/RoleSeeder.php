@@ -24,14 +24,11 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'add-dog']);
         Permission::create(['name' => 'edit-any-dog']);
         Permission::create(['name' => 'remove-any-dog']);
-        Permission::create(['name' => 'view-unavailable-products']);
-        Permission::create(['name' => 'add-product']);
-        Permission::create(['name' => 'edit-any-product']);
-        Permission::create(['name' => 'remove-any-product']);
         Permission::create(['name' => 'answer-messages']);
         Permission::create(['name' => 'view-all-carts']);
         Permission::create(['name' => 'edit-all-carts']);
         Permission::create(['name' => 'view-members']);
+        Permission::create(['name' => 'edit-about']);
         Permission::create(['name' => 'under-construction']);
 
         // Create roles and assign existing permissions
@@ -43,10 +40,6 @@ class RoleSeeder extends Seeder
         $vendor->givePermissionTo('add-dog');
         $vendor->givePermissionTo('edit-any-dog');
         $vendor->givePermissionTo('remove-any-dog');
-        $vendor->givePermissionTo('view-unavailable-products');
-        $vendor->givePermissionTo('add-product');
-        $vendor->givePermissionTo('edit-any-product');
-        $vendor->givePermissionTo('remove-any-product');
         $vendor->givePermissionTo('view-all-carts');
         $vendor->givePermissionTo('edit-all-carts');
 
@@ -55,12 +48,10 @@ class RoleSeeder extends Seeder
         $admin->givePermissionTo('view-unavailable-dogs');
         $admin->givePermissionTo('edit-any-dog');
         $admin->givePermissionTo('remove-any-dog');
-        $admin->givePermissionTo('view-unavailable-products');
-        $admin->givePermissionTo('edit-any-product');
-        $admin->givePermissionTo('remove-any-product');
         $admin->givePermissionTo('view-all-carts');
         $admin->givePermissionTo('edit-all-carts');
         $admin->givePermissionTo('view-members');
+        $admin->givePermissionTo('edit-about');
         $admin->givePermissionTo('under-construction');
 
         Role::create(['name' => 'owner']);

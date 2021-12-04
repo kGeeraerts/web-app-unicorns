@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\DogController;
 use App\Http\Controllers\MemberController;
@@ -22,9 +23,9 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
+Route::resource('/about', AboutController::class)->only([
+    'index', 'edit', 'update'
+]);
 
 Route::resource('/dogs', DogController::class)->parameters([
     'dogs' => 'dog'
@@ -72,7 +73,7 @@ Route::middleware(['auth:sanctum', 'verified', 'password.confirm', 'role:vendor|
     ]);
 });
 
-Route::get('/cookie', function (){
+Route::get('/cookie', function () {
     return view('cookie');
 })->name('cookie');
 

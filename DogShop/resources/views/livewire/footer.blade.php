@@ -1,7 +1,7 @@
 <div>
     <div class="flex items-start space-x-10 justify-center w-screen mb-2 dark:text-white">
         <a href="{{route('contact.create')}}">Contact us</a><br>
-        <a href="{{route('about')}}">About us</a>
+        <a href="{{route('about.index')}}">About us</a>
         <a href="{{route('cookie')}}">Cookie policy</a>
         <a href="{{route('policy.show')}}">Privacy Policy</a>
         <a href="{{route('terms.show')}}">Terms and Conditions</a>
