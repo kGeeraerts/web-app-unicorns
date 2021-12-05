@@ -7,7 +7,6 @@ use Exception;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use \Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Storage;
 
 class DogController extends Controller {
     /**
@@ -135,7 +134,7 @@ class DogController extends Controller {
      * @throws Exception
      */
     public function destroy(Dog $dog): RedirectResponse {
-        Storage::delete('/public' . $dog->image);
+//        Storage::delete('/public' . $dog->image);// DEV OPTION anders is de foto overal verdwenen
         $dog->delete();
         Log::info(auth()->user()->name . ' has deleted a dog');
         return redirect('/dogs')->with('status', 'Dog successfully deleted!');
